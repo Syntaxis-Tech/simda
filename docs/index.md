@@ -1,6 +1,7 @@
-![SimDa Logo](./assets/simda_logo.png){width="200px" }
-
-# SimDa
+<div class="center-container">
+  <img src="./assets/simda_logo.png" width="200" alt="SimDa Logo">
+  <h1>SimDa</h1>
+</div>
 
 What is Simda?
 

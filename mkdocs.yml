@@ -1,12 +1,44 @@
 site_name: Simda
+repo_url: https://github.com/Syntaxis-Tech/simda
+repo_name: Syntaxis-Tech/simda
+edit_uri: tree/main/docs
 
+# Theme Configuration
 theme:
   name: material
-  palette:
-    primary: 'teal'
-    accent: 'teal'
   logo: 'assets/simda_logo.png'
   favicon: 'assets/simda_logo.png'
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: brand-light-theme
+      primary: 'custom'
+      accent: 'custom'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
 
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: brand-dark-theme
+      primary: 'custom'
+      accent: 'custom'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Location of your custom CSS file
+# Ensure this file exists at: docs/stylesheets/extras.css
+extra_css:
+  - stylesheets/extras.css
+
+# Markdown Extensions
 markdown_extensions:
   - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
