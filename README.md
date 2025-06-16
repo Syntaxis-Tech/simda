@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/Syntaxis-Tech/simda/branch/feature/setup/graph/badge.svg)](https://codecov.io/gh/Syntaxis-Tech/simda)
+
+
 <p align="center">
   <a href=logo.png><img src=logo.png alt="SimDa"></a>
 </p>
