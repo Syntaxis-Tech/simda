@@ -1,0 +1,37 @@
+site_name: Simda
+repo_url: https://github.com/Syntaxis-Tech/simda
+repo_name: Syntaxis-Tech/simda
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+  logo: 'assets/simda_logo.png'
+  favicon: 'assets/simda_logo.png'
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: brand-light-theme
+      primary: 'custom'
+      accent: 'custom'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: brand-dark-theme
+      primary: 'custom'
+      accent: 'custom'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extras.css
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
