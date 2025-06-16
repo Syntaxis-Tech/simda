@@ -1,0 +1,154 @@
+/* Custom stylesheet for the brand theme.
+  This file includes color definitions, light/dark mode themes,
+  and utility classes.
+*/
+
+/* --- Root Color Definitions --- */
+:root {
+  /* Primary Colors */
+  --deep-forest: #1a3c34;
+  --mint-serenity: #d9e6c8;
+  --pristine: #ede9e4;
+  --midnight: #282927;
+  --white: #ffffff;
+
+  /* Tints (Lighter) */
+  --deep-forest-tint1: #4c6b62;
+  --deep-forest-tint2: #7f9a90;
+  --mint-serenity-tint1: #e6edd9;
+  --mint-serenity-tint2: #f2f5ea;
+
+  /* Shades (Darker) */
+  --deep-forest-shade1: #102923;
+  --deep-forest-shade2: #061512;
+  --mint-serenity-shade1: #c0d0b7;
+  --mint-serenity-shade2: #a7bba6;
+}
+
+/* --- Light Mode Theme --- */
+[data-md-color-scheme="brand-light-theme"] {
+  --md-default-fg-color: var(--midnight);
+  --md-default-bg-color: var(--pristine);
+  --md-primary-fg-color: var(--deep-forest);
+  --md-primary-fg-color--dark: var(--midnight);
+  --md-accent-fg-color: var(--deep-forest-tint1);
+  --md-typeset-a-color: var(--deep-forest);
+}
+
+/* --- Dark Mode Theme (with Improved Contrast v2) --- */
+[data-md-color-scheme="brand-dark-theme"] {
+  /* Defaults */
+  --md-default-bg-color: var(--midnight);
+  --md-default-fg-color: var(--pristine); /* General text color, good contrast */
+  --md-default-fg-color--light: var(--mint-serenity-shade1); /* Lighter, more contrasted secondary text */
+  --md-default-fg-color--lighter: var(--mint-serenity-shade1);
+
+  /* Typeset (Body Content) Colors */
+  --md-typeset-color: var(--pristine); /* Explicitly set body text to a light, readable color */
+
+  /* Primary UI elements (Header, Sidebar) */
+  --md-primary-fg-color: var(--deep-forest-shade1); /* Darker header background */
+  --md-primary-bg-color: var(--pristine);
+
+  /* Accent color for links and interactive elements */
+  --md-accent-fg-color: var(--mint-serenity-tint1);
+  --md-typeset-a-color: var(--mint-serenity-tint1);
+
+  /* Marked/highlighted text */
+  --md-typeset-mark-color: hsla(84, 55%, 92%, 0.2);
+
+  /* Code Blocks */
+  --md-code-fg-color: var(--pristine);
+  --md-code-bg-color: var(--deep-forest-shade2);
+
+  /* Code Syntax Highlighting (tweaked for clarity) */
+  --md-code-hl-comment-color: var(--deep-forest-tint2);
+  --md-code-hl-punctuation-color: var(--deep-forest-tint2);
+  --md-code-hl-generic-color: var(--mint-serenity-shade1);
+  --md-code-hl-variable-color: var(--pristine);
+  --md-code-hl-string-color: var(--mint-serenity);
+  --md-code-hl-keyword-color: var(--mint-serenity-shade1);
+  --md-code-hl-operator-color: var(--mint-serenity-shade1);
+  --md-code-hl-number-color: var(--mint-serenity-shade2);
+  --md-code-hl-special-color: var(--mint-serenity-shade2);
+  --md-code-hl-function-color: var(--mint-serenity-tint2);
+  --md-code-hl-constant-color: var(--mint-serenity);
+  --md-code-hl-name-color: var(--md-code-fg-color);
+
+  /* Inserted/Deleted text styles */
+  --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
+  --md-typeset-ins-color: hsla(84, 38%, 40%, 0.15);
+
+  /* Table styles */
+  --md-typeset-table-color: hsla(0, 0%, 100%, 0.12);
+  --md-typeset-table-color--light: hsla(0, 0%, 100%, 0.035);
+}
+
+
+/* --- Structural and Utility Styles --- */
+
+/* Utility class for centering content */
+.center-container {
+  text-align: center;
+}
+.center-container img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Ensures margins auto work correctly */
+}
+
+/* Image visibility rules for light/dark mode */
+[data-md-color-scheme="brand-light-theme"] img[src$="#only-dark"],
+[data-md-color-scheme="brand-light-theme"] img[src$="#gh-dark-mode-only"] {
+  display: none;
+}
+
+[data-md-color-scheme="brand-light-theme"] img[src$="#only-light"],
+[data-md-color-scheme="brand-light-theme"] img[src$="#gh-light-mode-only"] {
+  display: inline-block;
+}
+
+[data-md-color-scheme="brand-dark-theme"] img[src$="#only-light"],
+[data-md-color-scheme="brand-dark-theme"] img[src$="#gh-light-mode-only"] {
+  display: none;
+}
+
+[data-md-color-scheme="brand-dark-theme"] img[src$="#only-dark"],
+[data-md-color-scheme="brand-dark-theme"] img[src$="#gh-dark-mode-only"] {
+  display: inline-block;
+}
+
+/* Table layout adjustments */
+.md-typeset__table {
+  min-width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+}
+
+/* Specific link color fix within 'details' summary */
+[data-md-color-scheme="brand-dark-theme"] details summary a {
+  color: var(--mint-serenity-tint1);
+}
+
+/* Admonition block styling for dark mode */
+[data-md-color-scheme="brand-dark-theme"] div.admonition {
+  color: var(--md-code-fg-color);
+  background-color: var(--md-code-bg-color);
+}
+
+/* Prevent selection of prompts in code blocks */
+.highlight .gp,
+.highlight .go {
+  user-select: none;
+}
+
+/* Styling for anchor link headers */
+.toclink {
+  color: unset !important;
+}
+
+.toclink:hover {
+  color: var(--md-accent-fg-color) !important;
+}
