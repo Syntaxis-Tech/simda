@@ -2,7 +2,9 @@
 name = "simda"
 version = "0.1.0"
 description = "Simda is a simple data downloader for brazilian financial data. "
-authors = ["0b10n3 <silvasmath@gmail.com>"]
+authors = [
+    {name = "0b10n3", email = "silvasmath@gmail.com"}
+]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
